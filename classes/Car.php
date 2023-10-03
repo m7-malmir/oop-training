@@ -1,7 +1,25 @@
 <?php
-class Car{
-    public function __construct()
-    {
-        echo 'ok';
+abstract class Car{
+    public $first_place;
+    public $destination;
+    public $fuel;
+    public function __construct($a,$b,$f){
+        $this->first_place=$a;
+        $this->destination=$b;
+        $this->fuel=$f;
+    }
+    abstract function fuel();
+    abstract function speed();
+    public function moveRight(){
+        //todo
+    }
+    public function moveLeft(){
+        //todo
+    }
+    public function moveUp(){
+        //todo
+    }
+    public function moveDown(){
+        //todo
     }
 }
