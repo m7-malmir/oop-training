@@ -9,8 +9,18 @@
   <div id="output"></div>
 
 <?php
-
-
+function start($xy,$z){
+    $stri = (string)$xy;
+    $x = $stri[0];
+    $y = $stri[1];
+    $strz = (string)$z;
+    $j = $strz[0];
+    $k = $strz[1];
+    $a=$x- $j;
+    $b=$y-$k;
+    
+}
+start(23,56);
 ?>
 
   <script>
