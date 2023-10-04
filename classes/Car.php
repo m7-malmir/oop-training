@@ -14,7 +14,7 @@ abstract class Car{
         return true;
     }
     public function moveLeft(){
-        //todo
+        return true;
     }
     public function moveUp(){
         //todo
