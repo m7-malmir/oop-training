@@ -11,7 +11,7 @@ abstract class Car{
     abstract function fuel();
     abstract function speed();
     public function moveRight(){
-        //todo
+        return true;
     }
     public function moveLeft(){
         //todo
