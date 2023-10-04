@@ -1,19 +1,9 @@
 <html>
 <head>
-  <title>Sling Academy</title>
+
   <style>
-    /* We will get the position of this element */
-    #example-element {
-      /* width: 20px;
-      height: 10px;
-      background-color: lightblue;
-      margin: 50px; */
-    }
-    /* The result will be displed within this element */
-    #output {
-      font-size: 30px;
-      color: blue;
-    }
+
+   
   </style>
 </head>
 <body>
