@@ -26,8 +26,10 @@ $x=1;
 $d=6;
 function right(){
   global $x;
-    $x+1;
+    return  $x+1;
+    if(){}
 }
+echo right();
 // function up(){
 //   $y+1;
 // }
