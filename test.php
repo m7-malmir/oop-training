@@ -26,10 +26,23 @@ $x=1;
 $d=6;
 function right(){
   global $x;
-    return  $x+1;
-    if(){}
+  global $d;
+    $x=$x+1;
+    if($x==$d){
+      return $d;
+    }elseif($x>$d){
+      return false;
+    }else{
+      return $x;
+    }
+   
 }
 echo right();
+echo right();
+echo right();
+echo right();
+//echo right();
+//echo right();
 // function up(){
 //   $y+1;
 // }
