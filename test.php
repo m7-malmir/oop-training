@@ -13,44 +13,59 @@ function start($xy,$z){
     $x = $stri[0];
     $y = $stri[1];
     $strz = (string)$z;
+    $stri=[$x,$y];
+    $_SESSION['fip']=$stri;
     $j = $strz[0];
     $k = $strz[1];
+    $strz=[$j,$k];
+    $_SESSION['sep']=$strz;
     $a= $j-$x;
     $b= $k-$y;
     $des=[$a,$b];
     $_SESSION['des']=$des;
-    print_r( $_SESSION['des']);
+    //print_r( $_SESSION['fip']);
+   print_r( $_SESSION['des']);
 }
-start(13,26);
-// $x=1;
-// $d=6;
+start(13,46);
+
 function right(){
-  $x=$_SESSION['des'][0]+=1;
-  $d=$_SESSION['des'][1];
+  $x=$_SESSION['fip'][0]+=1;
+  $d=$_SESSION['des'][0];
     if($x==$d){
-      return $d;
+      echo 'u arrived';
     }elseif($x>$d){
-      return false;
+      echo 'u passed destination turn back';
     }else{
-      return $x;
+      echo 'u are in right way';
     }
 }
-function left(){
-  $x=$_SESSION['des'][0]-=1;
-  $d=$_SESSION['des'][1];
+function up(){
+  $x=$_SESSION['fip'][1]+=1;
+  $d=$_SESSION['sep'][1];
     if($x==$d){
-      return $d;
+      echo 'u arrived';
     }elseif($x>$d){
-      return false;
+      echo 'u passed destination turn back';
     }else{
-      return $x;
+      echo 'u are in right way';
     }
 }
-echo right();
-echo right();
-echo left();
-//echo left();
+// function left(){
+//   $x=$_SESSION['fip'][0]+=1;
+//   $d=$_SESSION['des'][0];
+//     if($x==$d){
+//       echo 'u arrived';
+//     }elseif($x>$d){
+//       echo 'u passed destination turn back';
+//     }else{
+//       echo 'u are in right way';
+//     }
+// }
 // echo right();
+//  echo right();
+echo up();
+echo up();
+ echo up();
 // echo right();
 // function up(){
 //   $y+1;
