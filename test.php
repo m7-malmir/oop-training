@@ -30,13 +30,14 @@ start(13,46);
 
 function right(){
   $x=$_SESSION['fip'][0]+=1;
-  $d=$_SESSION['des'][0];
+  $d=$_SESSION['sep'][0];
+  print_r($x);
     if($x==$d){
       echo 'u arrived';
     }elseif($x>$d){
-      echo 'u passed destination turn back';
+      // echo 'u passed destination turn back';
     }else{
-      echo 'u are in right way';
+      // echo 'u are in right way';
     }
 }
 function up(){
@@ -45,9 +46,9 @@ function up(){
     if($x==$d){
       echo 'u arrived';
     }elseif($x>$d){
-      echo 'u passed destination turn back';
+      // echo 'u passed destination turn back';
     }else{
-      echo 'u are in right way';
+      // echo 'u are in right way';
     }
 }
 // function left(){
@@ -61,12 +62,12 @@ function up(){
 //       echo 'u are in right way';
 //     }
 // }
-// echo right();
-//  echo right();
+echo right();
+ echo right();
 echo up();
 echo up();
  echo up();
-// echo right();
+ echo right();
 // function up(){
 //   $y+1;
 // }
