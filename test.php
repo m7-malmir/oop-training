@@ -24,7 +24,7 @@ function start($xy,$z){
     $des=[$a,$b];
     $_SESSION['des']=$des;
     //print_r( $_SESSION['fip']);
-   print_r( $_SESSION['des']);
+   //print_r( $_SESSION['des']);
 }
 start(13,46);
 
@@ -39,6 +39,7 @@ function right(){
     }else{
       // echo 'u are in right way';
     }
+    return $_SESSION['fip'];
 }
 function up(){
   $x=$_SESSION['fip'][1]+=1;
@@ -50,6 +51,7 @@ function up(){
     }else{
       // echo 'u are in right way';
     }
+    return $_SESSION['fip'];
 }
 // function left(){
 //   $x=$_SESSION['fip'][0]+=1;
@@ -62,13 +64,11 @@ function up(){
 //       echo 'u are in right way';
 //     }
 // }
-echo right();
- echo right();
-echo up();
-echo up();
- echo up();
- echo right();
-// function up(){
-//   $y+1;
-// }
+print_r(right()) ;
+//  echo right();
+ print_r(up()) ;
+// echo up();
+//  echo up();
+//  echo right();
+
 ?>
