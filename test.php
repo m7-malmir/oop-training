@@ -66,9 +66,10 @@ function up(){
 // }
 print_r(right()) ;
 //  echo right();
- print_r(up()) ;
-// echo up();
+ print_r(up());
+ print_r(up());
 //  echo up();
-//  echo right();
+//   echo up();
+//   echo right();
 
 ?>
