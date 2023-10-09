@@ -23,8 +23,7 @@ function start($xy,$z){
     $b= $k-$y;
     $des=[$a,$b];
     $_SESSION['des']=$des;
-    //print_r( $_SESSION['fip']);
-   //print_r( $_SESSION['des']);
+
 }
 start(13,46);
 
