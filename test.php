@@ -26,7 +26,7 @@ function start($xy,$z){
 
 }
 start(13,46);
-
+//print_r($_SESSION);
 function right(){
   $x=$_SESSION['fip'][0]+=1;
   $d=$_SESSION['sep'][0];
@@ -46,7 +46,7 @@ function up(){
     if($x==$d){
       echo 'u arrived';
     }elseif($x>$d){
-      // echo 'u passed destination turn back';
+       echo 'u passed destination turn back';
     }else{
       // echo 'u are in right way';
     }
@@ -63,12 +63,12 @@ function up(){
 //       echo 'u are in right way';
 //     }
 // }
-print_r(right()) ;
-//  echo right();
- print_r(up());
- print_r(up());
-//  echo up();
-//   echo up();
+print_r(right()).'</br>' ;
+print_r(right()).'</br>';
+  print_r(up()).'</br>';
+  print_r(up()).'</br>';
+  print_r(up()).'</br>';
+  print_r(up()).'</br>';
 //   echo right();
 
 ?>
