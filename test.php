@@ -8,6 +8,7 @@
   <div id="output"></div>
 <?php
 session_start();
+//session_destroy();
 function start($xy,$z){
     $stri = (string)$xy;
     $x = $stri[0];
@@ -25,8 +26,12 @@ function start($xy,$z){
     $_SESSION['des']=$des;
 
 }
-start(13,46);
+start(13,36);
 //print_r($_SESSION);
+function benz($a,$b,$fuel){
+  start($a,$b);
+  $_SESSION['fuel']=$fuel;
+}
 function right(){
   $x=$_SESSION['fip'][0]+=1;
   $d=$_SESSION['sep'][0];
@@ -63,12 +68,12 @@ function up(){
 //       echo 'u are in right way';
 //     }
 // }
-print_r(right()).'</br>' ;
-print_r(right()).'</br>';
-  print_r(up()).'</br>';
-  print_r(up()).'</br>';
-  print_r(up()).'</br>';
-  print_r(up()).'</br>';
-//   echo right();
+print_r(right()).'</br>'. PHP_EOL ;
+print_r(right()).'</br>'. PHP_EOL;
+print_r(up()).'</br>'. PHP_EOL;
+print_r(up()).'</br>'. PHP_EOL;
+print_r(up()).'</br>'. PHP_EOL;
+//print_r(right()).'</br>'. PHP_EOL;
+
 
 ?>
