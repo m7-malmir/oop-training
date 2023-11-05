@@ -26,7 +26,7 @@ function start($xy,$z){
     $_SESSION['des']=$des;
 
 }
-start(13,36);
+
 //print_r($_SESSION);
 function benz($a,$b,$fuel){
   start($a,$b);
