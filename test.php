@@ -27,21 +27,27 @@ function start($xy,$z){
 
 }
 
-//print_r($_SESSION);
+print_r($_SESSION);
+$flag_benz=0;
 function benz($a,$b,$fuel){
+  global $flag_benz;
+  $flag_benz=1;
   start($a,$b);
   $_SESSION['fuel']=$fuel;
 }
+benz(23,56,35);
+print_r($flag_benz);
 function right(){
+  $f= $_SESSION['fuel']-1;
   $x=$_SESSION['fip'][0]+=1;
   $d=$_SESSION['sep'][0];
   print_r($x);
     if($x==$d){
       echo 'u arrived';
     }elseif($x>$d){
-      // echo 'u passed destination turn back';
+       echo 'u passed destination turn back';
     }else{
-      // echo 'u are in right way';
+       echo 'u are in right way';
     }
     return $_SESSION['fip'];
 }
@@ -53,7 +59,7 @@ function up(){
     }elseif($x>$d){
        echo 'u passed destination turn back';
     }else{
-      // echo 'u are in right way';
+       echo 'u are in right way';
     }
     return $_SESSION['fip'];
 }
@@ -68,11 +74,12 @@ function up(){
 //       echo 'u are in right way';
 //     }
 // }
-print_r(right()).'</br>'. PHP_EOL ;
-print_r(right()).'</br>'. PHP_EOL;
-print_r(up()).'</br>'. PHP_EOL;
-print_r(up()).'</br>'. PHP_EOL;
-print_r(up()).'</br>'. PHP_EOL;
+
+// print_r(right()).'</br>'. PHP_EOL ;
+// print_r(right()).'</br>'. PHP_EOL;
+// print_r(up()).'</br>'. PHP_EOL;
+// print_r(up()).'</br>'. PHP_EOL;
+// print_r(up()).'</br>'. PHP_EOL;
 //print_r(right()).'</br>'. PHP_EOL;
 
 
