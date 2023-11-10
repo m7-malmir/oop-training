@@ -8,18 +8,13 @@ abstract class Car{
         $this->destination=$b;
         $this->fuel=$f;
     }
-    abstract function fuel();
-    abstract function speed();
-    public function moveRight(){
-        return true;
-    }
-    public function moveLeft(){
-        return true;
-    }
-    public function moveUp(){
-        return false;
-    }
-    public function moveDown(){
-        return false;
-    }
+     
+function benz($a,$b,$fuel){
+  global $flag_benz;
+  $flag_benz=1;
+  start($a,$b);
+  $_SESSION['fuel']=$fuel;
+}
+
+
 }
