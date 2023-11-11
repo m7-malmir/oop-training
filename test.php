@@ -41,35 +41,19 @@ function right(){
   global $flag_benz;
   if($flag_benz==1){
     $_SESSION['fuel']=$_SESSION['fuel']-3.8;
-    
   }
   $x=$_SESSION['fip'][0]+=1;
   $d=$_SESSION['sep'][0];
+    if($x==$d){
+      echo 'u arrived';
+    }elseif($x>$d){
+       echo 'u passed destination turn back';
+    }else{
+       echo 'u are in right way';
+    }
+    return $_SESSION['fip'];
+}
 
-    if($x==$d){
-      echo 'u arrived';
-    }elseif($x>$d){
-       echo 'u passed destination turn back';
-    }else{
-       echo 'u are in right way';
-    }
-    return $_SESSION['fip'];
-    
-    
-}
-function up(){
-  $x=$_SESSION['fip'][1]+=1;
-  $d=$_SESSION['sep'][1];
-    if($x==$d){
-      echo 'u arrived';
-    }elseif($x>$d){
-       echo 'u passed destination turn back';
-    }else{
-       echo 'u are in right way';
-    }
-    return $_SESSION['fip'];
-    
-}
 // function left(){
 //   $x=$_SESSION['fip'][0]+=1;
 //   $d=$_SESSION['des'][0];

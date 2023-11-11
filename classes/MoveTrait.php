@@ -1,6 +1,5 @@
 <?php
 
-
 trait MoveTrait{
     public function __construct($fpoint,$destination){  
     $stri = (string)$fpoint;
