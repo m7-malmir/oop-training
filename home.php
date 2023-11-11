@@ -1,21 +1,57 @@
 <?php 
 session_start();
-class BaseMove{
+//session_destroy();
+// class BaseMove{
+//     public $first;
+//     public $des;
+    
+//     public function __construct($first,$des){
+//         $this->first=$first;
+//         $this->des=$des;
+//     } 
+
+//     public function getFirstPoint(){
+//         $stri = (string)$this->first;
+//         $x = $stri[0];
+//         $y = $stri[1];
+//         $stri=[$x,$y];
+//         $_SESSION['fip']=$stri;
+      
+//     }
+
+//     public function getDesPoint(){
+//         $strz = (string)$this->des;
+//         $j = $strz[0];
+//         $k = $strz[1];
+//         $strz=[$j,$k];
+//         $_SESSION['sep']=$strz;
+      
+//     }
+
+//     public function getTodoMove(){
+//         $a= $_SESSION['sep'][0]-$_SESSION['fip'][0];
+//         $b= $_SESSION['sep'][1]-$_SESSION['fip'][1];
+//         $des=[$a,$b];
+//         $_SESSION['des']=$des;
+       
+//     }
+// }
+
+class Car {
     public $first;
     public $des;
-    
-    public function __construct($first,$des){
+    public $flag=0;
+    public function __construct($first,$des,$fuel){
         $this->first=$first;
         $this->des=$des;
-    } 
-
-    public function getFirstPoint(){
+        $_SESSION['fuel']=$fuel;
+    }
+     public function getFirstPoint(){
         $stri = (string)$this->first;
         $x = $stri[0];
         $y = $stri[1];
         $stri=[$x,$y];
         $_SESSION['fip']=$stri;
-        return $_SESSION['fip'];
     }
 
     public function getDesPoint(){
@@ -24,7 +60,6 @@ class BaseMove{
         $k = $strz[1];
         $strz=[$j,$k];
         $_SESSION['sep']=$strz;
-        return $_SESSION['sep'];
     }
 
     public function getTodoMove(){
@@ -32,22 +67,14 @@ class BaseMove{
         $b= $_SESSION['sep'][1]-$_SESSION['fip'][1];
         $des=[$a,$b];
         $_SESSION['des']=$des;
-        return  $_SESSION['des'];
-    }
-}
-
-class Car extends BaseMove{
-    public $flag=0;
-    public function __construct($first,$des,$fuel){
-        $this->first=$first;
-        $this->des=$des;
-        $_SESSION['fuel']=$fuel;
     }
     public function right(){ 
-        
+         $this->getFirstPoint();
+         $this->getDesPoint();
+          $this->getTodoMove();
         $_SESSION['fuel']=$_SESSION['fuel']-3.8;
-        $x=$this->getFirstPoint()[0]+=1;
-        $d=$this->getDesPoint()[0];
+        $x=$_SESSION['fip'][0]+=1;
+        $d=$_SESSION['sep'][0];
           if($x==$d){
             echo 'u arrived';
           }elseif($x>$d){
@@ -71,9 +98,11 @@ class Car extends BaseMove{
       }
 }
 $newcar=new Car(11,44,14);
-$newcar->right();
-$newcar->right();
 print_r($newcar->right());
-
+ print_r($newcar->right());
+ print_r($newcar->right());
+// print_r($newcar->up());
+// print_r($newcar->up());
+// print_r($newcar->up());
 //print_r($_SESSION);
 ?>
