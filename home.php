@@ -41,6 +41,8 @@ class Car {
     public $first;
     public $des;
     public $flag=0;
+    public $fip=$_SESSION['fip'];
+    public $sep=$_SESSION['sep'];
     public function __construct($first,$des,$fuel){
         $this->first=$first;
         $this->des=$des;
@@ -73,7 +75,8 @@ class Car {
          $this->getDesPoint();
           $this->getTodoMove();
         $_SESSION['fuel']=$_SESSION['fuel']-3.8;
-        $x=$_SESSION['fip'][0]+=1;
+        $this->$fip[0]+=1;
+        $x=$_SESSION['fip'][0];
         $d=$_SESSION['sep'][0];
           if($x==$d){
             echo 'u arrived';
@@ -100,7 +103,7 @@ class Car {
 $newcar=new Car(11,44,14);
 print_r($newcar->right());
  print_r($newcar->right());
- print_r($newcar->right());
+ ///print_r($newcar->right());
 // print_r($newcar->up());
 // print_r($newcar->up());
 // print_r($newcar->up());
