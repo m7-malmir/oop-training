@@ -1,6 +1,6 @@
 <?php 
 session_start();
-//session_destroy();
+///session_destroy();
 // class BaseMove{
 //     public $first;
 //     public $des;
@@ -41,12 +41,13 @@ class Car {
     public $first;
     public $des;
     public $flag=0;
-    public $fip=$_SESSION['fip'];
-    public $sep=$_SESSION['sep'];
+    public $fip;
+    public $sep;
     public function __construct($first,$des,$fuel){
         $this->first=$first;
         $this->des=$des;
         $_SESSION['fuel']=$fuel;
+      
     }
      public function getFirstPoint(){
         $stri = (string)$this->first;
@@ -54,37 +55,35 @@ class Car {
         $y = $stri[1];
         $stri=[$x,$y];
         $_SESSION['fip']=$stri;
+        return $_SESSION['fip'];
     }
-
     public function getDesPoint(){
         $strz = (string)$this->des;
         $j = $strz[0];
         $k = $strz[1];
         $strz=[$j,$k];
         $_SESSION['sep']=$strz;
+        return $_SESSION['sep'];
     }
-
     public function getTodoMove(){
         $a= $_SESSION['sep'][0]-$_SESSION['fip'][0];
         $b= $_SESSION['sep'][1]-$_SESSION['fip'][1];
         $des=[$a,$b];
         $_SESSION['des']=$des;
+        return $_SESSION['des'];
     }
     public function right(){ 
-         $this->getFirstPoint();
-         $this->getDesPoint();
-          $this->getTodoMove();
-        $_SESSION['fuel']=$_SESSION['fuel']-3.8;
-        $this->$fip[0]+=1;
-        $x=$_SESSION['fip'][0];
-        $d=$_SESSION['sep'][0];
-          if($x==$d){
-            echo 'u arrived';
-          }elseif($x>$d){
-             echo 'u passed destination turn back';
-          }else{
-             echo 'u are in right way';
-          }
+      $this->getFirstPoint();
+       // $_SESSION['fuel']=$_SESSION['fuel']-3.8;
+         $_SESSION['fip'][0]+=1;
+        // $d=$_SESSION['sep'][0];
+        //   if($x==$d){
+        //     echo 'u arrived';
+        //   }elseif($x>$d){
+        //      echo 'u passed destination turn back';
+        //   }else{
+        //      echo 'u are in right way';
+        //   }
           return $_SESSION['fip'];
       }
       function up(){
@@ -102,8 +101,8 @@ class Car {
 }
 $newcar=new Car(11,44,14);
 print_r($newcar->right());
- print_r($newcar->right());
- ///print_r($newcar->right());
+print_r($newcar->right());
+//print_r($newcar->right());
 // print_r($newcar->up());
 // print_r($newcar->up());
 // print_r($newcar->up());
