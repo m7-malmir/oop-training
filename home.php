@@ -1,4 +1,5 @@
 <?php 
+
 //session_destroy();
 session_start();
 class Car {
@@ -14,7 +15,7 @@ public function __construct($first,$des,$fuel){
           $y = $stri[1];
           $stri=[$x,$y];
           $_SESSION['fip']=$stri;
-        $strz = (string)$z;
+        $strz = (string)$this->des;
     $j = $strz[0];
     $k = $strz[1];
     $strz=[$j,$k];
@@ -23,22 +24,35 @@ public function __construct($first,$des,$fuel){
     $b= $k-$y;
     $des=[$a,$b];
     $_SESSION['des']=$des;
+    $_SESSION['fuel']=$this->fuel;
     }
     public function right(){ 
-         $_SESSION['fip'][0]+=1;
+	 $_SESSION['fuel']  = $_SESSION['fuel']-30;
+      $x= $_SESSION['fip'][0]+=1;
+$d=$_SESSION['sep'][0];
+if($x==$d){
+      echo 'u arrived';
+    }elseif($x>$d){
+       echo 'u passed destination turn back';
+    }else{
+       echo 'u are in right way';
+    }
           return  $_SESSION['fip'];
       }
 public function up(){ 
+	  $_SESSION['fuel'] = $_SESSION['fuel']-30;
          $_SESSION['fip'][1]+=1;
           return  $_SESSION['fip'];
       }
 }
 $newcar=new Car(23,56,88);
-print_r($_SESSION['fip']);
+//print_r($_SESSION['fip']);
+
 print_r($newcar->right());
  print_r($newcar->up());
  //print_r($newcar->right());
 //print_r($_SESSION);
+print_r($_SESSION['fuel']);
 
 ?>
 
