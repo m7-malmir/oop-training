@@ -41,7 +41,16 @@ if($x==$d){
       }
 public function up(){ 
 	  $_SESSION['fuel'] = $_SESSION['fuel']-30;
-         $_SESSION['fip'][1]+=1;
+       $x=$_SESSION['fip'][1]+=1;
+$d=$_SESSION['sep'][0];
+if($x==$d){
+      echo 'u arrived';
+    }elseif($x>$d){
+       echo 'u passed destination turn back';
+    }else{
+       echo 'u are in right way';
+    }
+  
           return  $_SESSION['fip'];
       }
 }
