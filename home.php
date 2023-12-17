@@ -1,4 +1,5 @@
 <?php 
+
 //session_destroy();
 session_start();
 class Car {
@@ -48,7 +49,14 @@ print_r($newcar->right());
 //  print_r($newcar->up());
 //  print_r($newcar->up());
 //print_r($_SESSION);
+print_r($_SESSION['fuel']);
+
 ?>
+
+
+
+
+
 
 
 
