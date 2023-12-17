@@ -37,17 +37,26 @@ class Car {
           return  $_SESSION['fip'];
       }
       public function up(){ 
-         $_SESSION['fip'][1]+=1;
+        $_SESSION['fuel']=$_SESSION['fuel']-3.8;
+        $x=$_SESSION['fip'][1]+=1;
+        $d=$_SESSION['des'][1];
+        if($x==$d){
+            echo 'u arrived';
+          }elseif($x>$d){
+             echo 'u passed destination turn back';
+          }else{
+             echo 'u are in right way';
+          }
           return  $_SESSION['fip'];
       }
 }
 $newcar=new Car(23,55,10);
 print_r($_SESSION['fip']);
-print_r($newcar->right());
 //print_r($newcar->right());
-//  print_r($newcar->right());
-//  print_r($newcar->up());
-//  print_r($newcar->up());
+//print_r($newcar->right());
+//print_r($newcar->right());
+print_r($newcar->up());
+print_r($newcar->up());
 //print_r($_SESSION);
 print_r($_SESSION['fuel']);
 
