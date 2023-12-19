@@ -23,6 +23,7 @@ class Car {
     }
     public function right(){ 
         $_SESSION['fuel']=$_SESSION['fuel']-$this->fuel;
+        if( $_SESSION['fuel'] >= 0){
          $x=$_SESSION['fip'][0]+=1;
          $d=$_SESSION['des'][0];
            if($x==$d){
@@ -32,10 +33,15 @@ class Car {
            }else{
               echo 'u are in right way';
            }
+        }else{
+         echo 'your fuel is finish';
+        }
+        
           return  $_SESSION['fip'];
     }
     public function up(){ 
         $_SESSION['fuel']=$_SESSION['fuel']-$this->fuel;
+        if( $_SESSION['fuel'] >= 0){
         $x=$_SESSION['fip'][1]+=1;
         $d=$_SESSION['des'][1];
         if($x==$d){
@@ -45,6 +51,9 @@ class Car {
           }else{
              echo 'u are in right way';
           }
+         }else{
+            echo 'your fuel is finish';
+           }
           return  $_SESSION['fip'];
     }
 }
