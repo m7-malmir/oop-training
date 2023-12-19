@@ -13,7 +13,7 @@ class Car {
           $stri=[$x,$y];
           $_SESSION['fip']=$stri;
 
-          $this->des=$des;      
+          $this->des=$des;    
           $strz =(string)$this->des; 
           $x = $strz[0];
           $y = $strz[1];
@@ -26,7 +26,9 @@ class Car {
         if( $_SESSION['fuel'] >= 0){
          $x=$_SESSION['fip'][0]+=1;
          $d=$_SESSION['des'][0];
-           if($x==$d){
+         $y=$_SESSION['fip'][1];
+         $b=$_SESSION['des'][1];
+           if($x==$d && $y==$b){
              echo 'u arrived';
            }elseif($x>$d){
               echo 'u passed destination turn back';
@@ -42,9 +44,11 @@ class Car {
     public function up(){ 
         $_SESSION['fuel']=$_SESSION['fuel']-$this->fuel;
         if( $_SESSION['fuel'] >= 0){
+         $y=$_SESSION['fip'][0];
+         $b=$_SESSION['des'][0];
         $x=$_SESSION['fip'][1]+=1;
         $d=$_SESSION['des'][1];
-        if($x==$d){
+        if($x==$d && $y==$b){
             echo 'u arrived';
           }elseif($x>$d){
              echo 'u passed destination turn back';
