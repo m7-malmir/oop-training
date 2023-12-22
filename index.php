@@ -1,5 +1,5 @@
 <?php 
-include_once 'classes/Car.php';
+include_once 'classes/carTrait.php';
 include_once 'classes/Ferrari.php';
 
 $newcar=new Ferrari(23,34,10);
