@@ -1,5 +1,5 @@
 <?php
-trait DroneTrait{
+trait CarTrait{
     public $first;
     public $des;
     public $fuel;

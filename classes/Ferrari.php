@@ -1,8 +1,8 @@
 <?php
 
-class Ferrari extends Car{
+class Ferrari{
 
     use carTrait;
     public $fuel=5;
-    
+
 }
