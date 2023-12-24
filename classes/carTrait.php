@@ -1,5 +1,23 @@
 <?php
-trait carTrait{
+trait MoveTrait{
+       public function move(){ 
+         $o='';
+         $z='';
+        $_SESSION['fuel']=$_SESSION['fuel']-$this->fuel;
+        if( $_SESSION['fuel'] >= 0){
+            $x=$_SESSION['fip'][$z]+=1;
+           if($x==$_SESSION['des'][$z] && $_SESSION['fip'][$o]==$_SESSION['des'][$o]){
+             echo 'u arrived';
+           }elseif($x>$_SESSION['des'][$z]){
+              echo 'You passed destination, turn back';
+           }else{
+              echo 'You are in right way';
+           }
+        }else{
+         echo 'Your fuel is finish';
+        }
+          return  $_SESSION['fip'];
+    }
     public function right(){ 
         $_SESSION['fuel']=$_SESSION['fuel']-$this->fuel;
         if( $_SESSION['fuel'] >= 0){
