@@ -1,4 +1,5 @@
 <?php 
+include 'moveTrait1.php';
 //session_destroy();
 session_start();
 class Car {
@@ -21,7 +22,18 @@ class Car {
           $_SESSION['des']=$strz;
           $_SESSION['fuel']=$fuel;
     }
-    use carTrait;
+    use MoveTrait1;
+    public function right(){
+        $this->o=1;
+        $this->z=0;
+        return $this->move();
+    }
+    public function left(){
+        $this->o=0;
+        $this->z=1;
+        return $this->move();
+    }
+    
 }
 
 ?>
