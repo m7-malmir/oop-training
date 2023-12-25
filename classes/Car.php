@@ -1,5 +1,5 @@
 <?php 
-include 'moveTrait1.php';
+include 'moveTrait.php';
 //session_destroy();
 session_start();
 class Car {
@@ -8,19 +8,12 @@ class Car {
     public $fuel;
     public function __construct($first,$des,$fuel){
         $this->first=$first;      
-          $stri =(string)$this->first; 
-          $x = $stri[0];
-          $y = $stri[1];
-          $stri=[$x,$y];
-          $_SESSION['fip']=$stri;
-
-          $this->des=$des;    
-          $strz =(string)$this->des; 
-          $x = $strz[0];
-          $y = $strz[1];
-          $strz=[$x,$y];
-          $_SESSION['des']=$strz;
-          $_SESSION['fuel']=$fuel;
+        $stri=(string)$this->first;
+        $_SESSION['fip']=array($stri[0],$stri[1]);
+        $this->des=$des; 
+        $strz =(string)$this->des; 
+        $_SESSION['des']=array($strz[0],$strz[1]);
+        $_SESSION['fuel']=$fuel;
     }
     use MoveTrait1;
     public function right(){
