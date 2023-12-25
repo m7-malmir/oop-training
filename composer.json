@@ -1,0 +1,17 @@
+{
+    "name": "m7/movement",
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mohammad Malmir",
+            "email": "m.malmir666@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.8"
+    }
+}

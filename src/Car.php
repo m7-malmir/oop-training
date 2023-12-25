@@ -21,7 +21,7 @@ class Car {
         $this->z=0;
         return $this->move();
     }
-    public function left(){
+    public function up(){
         $this->o=0;
         $this->z=1;
         return $this->move();
